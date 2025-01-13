@@ -1,3 +1,5 @@
+package day01;
+
 import java.util.*;
 
 public class Q01_Game {
