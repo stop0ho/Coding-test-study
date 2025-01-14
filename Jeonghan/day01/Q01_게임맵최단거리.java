@@ -2,7 +2,7 @@ package day01;
 
 import java.util.*;
 
-public class Q01_Game {
+public class Q01_게임맵최단거리 {
 
     private static final int[] dx = {1, -1, 0, 0};
     private static final int[] dy = {0, 0, 1, -1};
