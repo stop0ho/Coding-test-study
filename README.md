@@ -17,14 +17,18 @@
 - 회고: 금요일마다 회고를 진행한다.
 
 ## 계획
-날짜 | 문제 이름 | 문제 링크 | 문제 유형
---- | --- | --- | --- 
-2025/1/13 | 게임 맵 최단거리 | [링크](https://school.programmers.co.kr/learn/courses/30/lessons/1844) | 그래프 탐색
-2025/1/14 | 네트워크 | [링크](https://school.programmers.co.kr/learn/courses/30/lessons/43162) | 그래프 탐색
-2025/1/15 | 예산 | [링크](https://school.programmers.co.kr/learn/courses/30/lessons/12982) | 그리디
-2025/1/15 | 귤 고르기 | [링크](https://school.programmers.co.kr/learn/courses/30/lessons/138476) | 그리디
-2025/1/16 | 기지국 설치 | [링크](https://school.programmers.co.kr/learn/courses/30/lessons/12979) | 그리디
-2025/1/17 | 표 편집 | [링크](https://school.programmers.co.kr/learn/courses/30/lessons/81303) | 스택
+날짜 | 문제 | 문제 유형
+--- | --- | ---
+2025/1/13 | [게임 맵 최단거리](https://school.programmers.co.kr/learn/courses/30/lessons/1844) | 그래프 탐색
+2025/1/14 | [네트워크](https://school.programmers.co.kr/learn/courses/30/lessons/43162) | 그래프 탐색
+2025/1/15 | [예산](https://school.programmers.co.kr/learn/courses/30/lessons/12982), [귤 고르기](https://school.programmers.co.kr/learn/courses/30/lessons/138476) | 그리디
+2025/1/16 | [기지국 설치](https://school.programmers.co.kr/learn/courses/30/lessons/12979) | 그리디
+2025/1/17 | [표 편집](https://school.programmers.co.kr/learn/courses/30/lessons/81303) | 스택
+2025/1/20 | [배달](https://school.programmers.co.kr/learn/courses/30/lessons/12978) | 그래프(다익스트라)
+2025/1/21 | [미로만들기](https://www.acmicpc.net/problem/2665) | 그래프(다익스트라)
+2025/1/22 | [메뉴 리뉴얼](https://school.programmers.co.kr/learn/courses/30/lessons/72411) | 해시
+2025/1/23 | [피로도](https://school.programmers.co.kr/learn/courses/30/lessons/87946), [N-퀸](https://school.programmers.co.kr/learn/courses/30/lessons/12952), [양궁 대회](https://school.programmers.co.kr/learn/courses/30/lessons/92342) | 백트래킹
+2025/1/24 | [사라지는 발판](https://school.programmers.co.kr/learn/courses/30/lessons/92345) | 백트래킹
 
 1. 주간 중 월-목은 이론이 필요한 알고리즘을 위주로 다루며, 복습 시간 확보를 위해 주간 중 앞일수록 어려운 것 혹은 보완하고 싶은 것 위주로 다룬다.
 2. 도서의 몸풀기 문제와 그 외 문제는 학습용으로 각자 자유롭게 풀어본다.
