@@ -1,4 +1,4 @@
-package Jin.day04;
+package Jin.week1.day04;
 
 public class Q05_기지국설치 {
     public int solution(int n, int[] stations, int w) {

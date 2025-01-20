@@ -1,4 +1,4 @@
-package Jin.day02;
+package Jin.week1.day02;
 
 public class Q02_네트워크 {
     // 방문 여부를 체크

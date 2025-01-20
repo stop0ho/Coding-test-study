@@ -1,4 +1,4 @@
-package Jin.day01;
+package Jin.week1.day01;
 
 import java.util.LinkedList;
 import java.util.Queue;

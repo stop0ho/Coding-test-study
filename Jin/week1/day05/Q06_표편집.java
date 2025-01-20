@@ -1,4 +1,4 @@
-package Jin.day05;
+package Jin.week1.day05;
 
 import java.util.Arrays;
 import java.util.Stack;

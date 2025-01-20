@@ -1,4 +1,4 @@
-package Jin.day06;
+package Jin.week2.day06;
 
 import java.util.Arrays;
 import java.util.Comparator;
