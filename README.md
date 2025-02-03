@@ -38,11 +38,11 @@
 ### 3주차
 날짜 | 문제 | 문제 유형
 --- | --- | ---
-2025/2/3 | [실패율](https://school.programmers.co.kr/learn/courses/30/lessons/12978) | 배열
-2025/2/4 | [폰켓몬](https://www.acmicpc.net/problem/2665) | 집합
-2025/2/5 | [섬 연결하기](https://school.programmers.co.kr/learn/courses/30/lessons/72411) | 집합
-2025/2/6 | [다단계 칫솔 판매](https://school.programmers.co.kr/learn/courses/30/lessons/87946) | 트리
-2025/2/7 | [양과 늑대](https://school.programmers.co.kr/learn/courses/30/lessons/92345) | 트리
+2025/2/3 | [실패율](https://school.programmers.co.kr/learn/courses/30/lessons/42889) | 배열
+2025/2/4 | [폰켓몬](https://school.programmers.co.kr/learn/courses/30/lessons/1845) | 집합
+2025/2/5 | [섬 연결하기](https://school.programmers.co.kr/learn/courses/30/lessons/42861) | 집합
+2025/2/6 | [다단계 칫솔 판매](https://school.programmers.co.kr/learn/courses/30/lessons/77486) | 트리
+2025/2/7 | [양과 늑대](https://school.programmers.co.kr/learn/courses/30/lessons/92343) | 트리
 
 1. 주간 중 월-목은 이론이 필요한 알고리즘을 위주로 다루며, 복습 시간 확보를 위해 주간 중 앞일수록 어려운 것 혹은 보완하고 싶은 것 위주로 다룬다.
 2. 도서의 몸풀기 문제와 그 외 문제는 학습용으로 각자 자유롭게 풀어본다.
