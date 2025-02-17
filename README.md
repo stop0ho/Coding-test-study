@@ -53,6 +53,14 @@
 2025/2/13 | [점프와 순간이동](https://school.programmers.co.kr/learn/courses/30/lessons/12980) | 시뮬레이션
 2025/2/14 | [카드 뭉치](https://school.programmers.co.kr/learn/courses/30/lessons/159994) | 큐
 
+### 5주차
+날짜 | 문제 | 문제 유형
+--- | --- | ---
+2025/2/17 | [연속된 부분 수열의 합](https://school.programmers.co.kr/learn/courses/30/lessons/178870) | 누적합
+2025/2/18 | [호텔 방 배정](https://school.programmers.co.kr/learn/courses/30/lessons/64063) | 누적합
+2025/2/19 | [징검다리 건너기](https://school.programmers.co.kr/learn/courses/30/lessons/64062) | 이분 탐색
+2025/2/20 | [입국 심사](https://school.programmers.co.kr/learn/courses/30/lessons/43238) | 이분 탐색
+
 1. 주간 중 월-목은 이론이 필요한 알고리즘을 위주로 다루며, 복습 시간 확보를 위해 주간 중 앞일수록 어려운 것 혹은 보완하고 싶은 것 위주로 다룬다.
 2. 도서의 몸풀기 문제와 그 외 문제는 학습용으로 각자 자유롭게 풀어본다.
 3. 선별한 문제 난이도를 3 정도로 맞춰본다. (유도리 있게 변경)
