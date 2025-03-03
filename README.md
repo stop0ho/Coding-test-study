@@ -90,11 +90,24 @@
 
 
 ### 6주차~ : 모의고사 풀이
-날짜 | 문제
---- | --- 
-2025/2/24 | [미로 탈출 명령어](https://school.programmers.co.kr/learn/courses/30/lessons/150365)
-2025/2/25 | [택배 배달과 수거하기](https://school.programmers.co.kr/learn/courses/30/lessons/150369)
-2025/2/26 | [개인정보 수집 유효기간](https://school.programmers.co.kr/learn/courses/30/lessons/150370)
+<details>
+<summary>6주차</summary>
+  
+day | 날짜 | 문제
+--- | --- | --- 
+day26 | 2025/2/24 | [미로 탈출 명령어](https://school.programmers.co.kr/learn/courses/30/lessons/150365)
+day27 | 2025/2/25 | [택배 배달과 수거하기](https://school.programmers.co.kr/learn/courses/30/lessons/150369)
+day28 | 2025/2/26 | [개인정보 수집 유효기간](https://school.programmers.co.kr/learn/courses/30/lessons/150370)
+
+</details>
+
+#### 7주차
+day | 날짜 | 문제
+--- | --- | --- 
+day31 | 2025/3/4 | [110 옮기기](https://school.programmers.co.kr/learn/courses/30/lessons/77886)
+day32 | 2025/3/5 | [쿼드압축 후 개수 세기](https://school.programmers.co.kr/learn/courses/30/lessons/68936)
+day33 | 2025/3/6 | [없는 숫자 더하기](https://school.programmers.co.kr/learn/courses/30/lessons/86051)
+
 
 
 
