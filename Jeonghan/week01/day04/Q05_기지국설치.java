@@ -1,4 +1,4 @@
-package week1.day04;
+package week01.day04;
 
 public class Q05_기지국설치 {
 
