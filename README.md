@@ -101,14 +101,24 @@ day28 | 2025/2/26 | [개인정보 수집 유효기간](https://school.programmer
 
 </details>
 
-#### 7주차
+<details>
+<summary>7주차</summary>
+
 day | 날짜 | 문제
 --- | --- | --- 
 day31 | 2025/3/4 | [110 옮기기](https://school.programmers.co.kr/learn/courses/30/lessons/77886)
 day32 | 2025/3/5 | [쿼드압축 후 개수 세기](https://school.programmers.co.kr/learn/courses/30/lessons/68936)
 day33 | 2025/3/6 | [없는 숫자 더하기](https://school.programmers.co.kr/learn/courses/30/lessons/86051)
 
+</details>
 
+### 8주차
+
+day | 날짜 | 문제
+--- | --- | --- 
+day36 | 2025/3/10 | [불량 사용자](https://school.programmers.co.kr/learn/courses/30/lessons/64064)
+day37 | 2025/3/11 | [k진수에서 소수 개수 구하기](https://school.programmers.co.kr/learn/courses/30/lessons/92335)
+day38 | 2025/3/12 | [거리두기 확인하기](https://school.programmers.co.kr/learn/courses/30/lessons/81302)
 
 
 1. 주간 중 월-목은 이론이 필요한 알고리즘을 위주로 다루며, 복습 시간 확보를 위해 주간 중 앞일수록 어려운 것 혹은 보완하고 싶은 것 위주로 다룬다.
