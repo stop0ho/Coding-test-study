@@ -123,13 +123,27 @@ day38 | 2025/3/12 | [거리두기 확인하기](https://school.programmers.co.kr
 
 </details>
 
-### 9주차
+
+<details>
+<summary>9주차</summary>
 
 day | 날짜 | 문제
 --- | --- | --- 
 day41 | 2025/3/17 | [치즈](https://www.acmicpc.net/problem/2638)
 day42 | 2025/3/18 | [강의실 배정](https://www.acmicpc.net/problem/11000)
 day43 | 2025/3/19 | [단어 변환](https://school.programmers.co.kr/learn/courses/30/lessons/43163)
+
+</details>
+
+
+### 10주차
+
+day | 날짜 | 문제
+--- | --- | --- 
+day46 | 2025/3/24 | [코딩 테스트 공부](https://school.programmers.co.kr/learn/courses/30/lessons/118668)
+day47 | 2025/3/25 | [두 큐 합 같게 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/118667)
+day48 | 2025/3/26 | [숫자 게임](https://school.programmers.co.kr/learn/courses/30/lessons/12987)
+
 
 
 1. 주간 중 월-목은 이론이 필요한 알고리즘을 위주로 다루며, 복습 시간 확보를 위해 주간 중 앞일수록 어려운 것 혹은 보완하고 싶은 것 위주로 다룬다.
