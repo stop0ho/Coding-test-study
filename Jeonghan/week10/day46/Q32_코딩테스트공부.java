@@ -1,4 +1,4 @@
-package week06.day29;
+package week10.day46;
 
 public class Q32_코딩테스트공부 {
 
