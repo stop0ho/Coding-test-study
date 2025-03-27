@@ -144,6 +144,14 @@ day46 | 2025/3/24 | [코딩 테스트 공부](https://school.programmers.co.kr/l
 day47 | 2025/3/25 | [두 큐 합 같게 만들기](https://school.programmers.co.kr/learn/courses/30/lessons/118667)
 day48 | 2025/3/26 | [숫자 게임](https://school.programmers.co.kr/learn/courses/30/lessons/12987)
 
+### 11주차
+
+day | 날짜 | 문제
+--- | --- | --- 
+day51 | 2025/3/31 | [보석 쇼핑](https://school.programmers.co.kr/learn/courses/30/lessons/67258)
+day52 | 2025/4/1 | [파괴되지 않은 건물](https://school.programmers.co.kr/learn/courses/30/lessons/92344)
+day53 | 2025/4/2 | [로또의 최고 순위와 최저 순위](https://school.programmers.co.kr/learn/courses/30/lessons/77484)
+
 
 
 1. 주간 중 월-목은 이론이 필요한 알고리즘을 위주로 다루며, 복습 시간 확보를 위해 주간 중 앞일수록 어려운 것 혹은 보완하고 싶은 것 위주로 다룬다.
