@@ -171,3 +171,317 @@ j는 색상값! R, G, B 색상 순서대로 0, 1, 2의 인덱스 / j와 k는 0, 
 
 
 ---
+## 📌 문제 탐색하기
+
+### 내려가기 문제
+
+내려가기 게임
+
+- **N X 3** 행렬
+- 다음 줄로 내려갈 때에는 바로 아래의 수 또는 아래의 수와 붙어 있는 수로만 이동 가능
+
+  **i = 1 → 1 또는 2** / **i = 2 → 1, 2 또는 3** / **i = 3 → 2 또는 3**
+
+- 칸에 주어진 숫자의 합으로 점수를 얻을 수 있을 때, 최대 점수와 최소 점수 구하기
+
+### 조건
+
+N: 줄의 개수 **1 ≤ N ≤ 100,000**
+
+### 풀이 및 시간 복잡도 고려
+
+어제 풀었던 [RGB 거리](https://www.notion.so/RGB-22e1aba2272880bd95bdc07b3098ecb8?pvs=21) 문제와 유사하게 풀이
+
+- minDP / maxDP 와 같은 이름으로 dp 배열을 두 개 만들어서 각각에서 최솟값과 최댓값을 구하기!
+
+사진
+
+이런 식으로 배열의 열 위치에 맞게 최대/최소 점수를 구하는 DP 배열을 준비
+
+점화식은 아래와 같이 작성할 수 있다.
+
+```java
+// minDP
+minDP[i][0] = input[i][0] + min(minDP[i - 1][0], minDP[i - 1][1])
+minDP[i][1] = input[i][1] + min(minDP[i - 1][0], minDP[i - 1][1], minDP[i - 1][2])
+minDP[i][2] = input[i][2] + min(minDP[i - 1][1], minDP[i - 1][2])
+
+// maxDP
+maxDP[i][0] = input[i][0] + max(maxDP[i - 1][0], maxDP[i - 1][1])
+maxDP[i][1] = input[i][1] + max(maxDP[i - 1][0], maxDP[i - 1][1], maxDP[i - 1][2])
+maxDP[i][2] = input[i][2] + max(maxDP[i - 1][1], maxDP[i - 1][2])
+```
+
+배열의 총 칸 수는 N X 3개이므로 O(N * 3) = **O(N)**의 시간복잡도를 가짐
+
+→ N의 최댓값이 **100,000이므로 1초 내에 문제 풀이 가능**
+
+---
+
+## 📌 코드 설계하기
+
+1. 문제 input을 입력 받기
+    - input 배열 정보를 **(1, 0)부터 (N + 1, 2)까지 저장**
+        - **행이 0인 경우를 별도 처리 없이 계산할 수 있게 하기 위함**
+2. dp 배열 두 개 생성
+    - 최댓값과 최솟값을 구하기 위함
+3. 각 배열의 N 번째 행에서 **최솟값과 최댓값을 구해 출력**
+
+---
+
+## 📌 시도 회차 수정 사항
+
+### 1회차
+
+- 코드
+
+    ```java
+    import java.io.*;
+    import java.util.*;
+    
+    public class Main {
+        public static void main(String[] args) throws Exception {
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+            
+            // 1. input 입력받기
+            int N = Integer.parseInt(br.readLine());
+            int[][] input = new int[N + 1][3];
+            
+            for (int i = 1; i <= N; i++) {
+                StringTokenizer st = new StringTokenizer(br.readLine());
+                for (int j = 0; j < 3; j++) {
+                    input[i][j] = Integer.parseInt(st.nextToken());
+                }
+            }
+            
+            // 2. dp 배열 두 개 생성
+            int[][] minDP = new int[N + 1][3];
+            int[][] maxDP = new int[N + 1][3];
+            
+            for (int i = 1; i <= N; i++) {
+                minDP[i][0] = input[i][0] + Math.min(minDP[i - 1][0], minDP[i - 1][1]);
+                minDP[i][1] = input[i][1] + Math.min(Math.min(minDP[i - 1][0], minDP[i - 1][1]), minDP[i - 1][2]);
+                minDP[i][2] = input[i][2] + Math.min(minDP[i - 1][1], minDP[i - 1][2]);
+                
+                maxDP[i][0] = input[i][0] + Math.max(maxDP[i - 1][0], maxDP[i - 1][1]);
+                maxDP[i][1] = input[i][1] + Math.max(Math.max(maxDP[i - 1][0], maxDP[i - 1][1]), maxDP[i - 1][2]);
+                maxDP[i][2] = input[i][2] + Math.max(maxDP[i - 1][1], maxDP[i - 1][2]);
+            }
+            
+            int min = Math.min(Math.min(minDP[N][0], minDP[N][1]), minDP[N][2]);
+            int max = Math.max(Math.max(maxDP[N][0], maxDP[N][1]), maxDP[N][2]);
+            
+            bw.write(max + " " + min);
+            
+            bw.flush();
+            bw.close();
+            br.close();
+        }
+    }
+    ```
+
+- Java언어
+    - 문제가 골드 5라는게 믿기지 않을 정도로 어제와 풀이가 비슷했고 쉬웠다. 제출 후 풀이를 확인해보니 다른 언어와 달리 Java 언어였기에 메모리가 널널해서 쉽게 풀 수 있던 것이었다.
+
+      문제에서 메모리 제한에 하단 참고 버튼을 누르면 딱 메모리 제한만 보여주기 때문에 알고리즘 분류를 보지 못하고 메모리 제한값만 보고 풀이를 해서 당연하고도 쉽게 문제 풀이를 했다.
+
+    - 멘토님의 풀이와 문제에서 주어지는 알고리즘 분류를 읽으니 **슬라이딩 윈도우**를 사용해서 메모리를 아끼며 dp로 풀어야 하는 문제였다.
+
+```java
+// 2. dp 배열 4개 생성
+int[] preMinDP = new int[3];
+int[] preMaxDP = new int[3];
+int[] nowMinDP = new int[3];
+int[] nowMaxDP = new int[3];
+
+for (int i = 1; i <= N; i++) {
+    nowMinDP[0] = input[i][0] + Math.min(preMinDP[0], preMinDP[1]);
+    nowMinDP[1] = input[i][1] + Math.min(Math.min(preMinDP[0], preMinDP[1]), preMinDP[2]);
+    nowMinDP[2] = input[i][2] + Math.min(preMinDP[1], preMinDP[2]);
+
+    nowMaxDP[0] = input[i][0] + Math.max(preMaxDP[0], preMaxDP[1]);
+    nowMaxDP[1] = input[i][1] + Math.max(Math.max(preMaxDP[0], preMaxDP[1]), preMaxDP[2]);
+    nowMaxDP[2] = input[i][2] + Math.max(preMaxDP[1], preMaxDP[2]);
+
+    preMinDP = nowMinDP.clone();
+    preMaxDP = nowMaxDP.clone();
+}
+```
+
+- **dp 배열을 총 4개를 만들어 메모리를 절약**해보기
+    - 원래 배열 2개에 공간복잡도 O(N * 3)이었는데, 배열 4개에 공간복잡도 O(3)으로 줄일 수 있음
+
+### 2회차
+
+- 코드
+
+    ```java
+    import java.io.*;
+    import java.util.*;
+    
+    public class Main {
+        public static void main(String[] args) throws Exception {
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    
+            // 1. input 입력받기
+            int N = Integer.parseInt(br.readLine());
+            int[][] input = new int[N + 1][3];
+    
+            for (int i = 1; i <= N; i++) {
+                StringTokenizer st = new StringTokenizer(br.readLine());
+                for (int j = 0; j < 3; j++) {
+                    input[i][j] = Integer.parseInt(st.nextToken());
+                }
+            }
+    
+            // 2. dp 배열 4개 생성
+            int[] minDP = new int[3];
+            int[] maxDP = new int[3];
+    
+            for (int i = 1; i <= N; i++) {
+                int min0 = minDP[0];
+                int min1 = minDP[1];
+                int min2 = minDP[2];
+                minDP[0] = input[i][0] + Math.min(min0, min1);
+                minDP[1] = input[i][1] + Math.min(Math.min(min0, min1), min2);
+                minDP[2] = input[i][2] + Math.min(min1, min2);
+    
+                int max0 = maxDP[0];
+                int max1 = maxDP[1];
+                int max2 = maxDP[2];
+                maxDP[0] = input[i][0] + Math.max(max0, max1);
+                maxDP[1] = input[i][1] + Math.max(Math.max(max0, max1), max2);
+                maxDP[2] = input[i][2] + Math.max(max1, max2);
+            }
+    
+            int min = Math.min(Math.min(minDP[0], minDP[1]), minDP[2]);
+            int max = Math.max(Math.max(maxDP[0], maxDP[1]), maxDP[2]);
+    
+            bw.write(max + " " + min);
+    
+            bw.flush();
+            bw.close();
+            br.close();
+        }
+    }
+    ```
+
+- **배열 4개를 쓰던걸 2개로 줄여서 메모리 절약**해보기
+    - **배열은 기존처럼 2개만 사용하되, min0, max2와 같은 임시 변수를 사용하기**
+
+```java
+// 2. dp 배열 4개 생성
+int[] minDP = new int[3];
+int[] maxDP = new int[3];
+
+for (int i = 1; i <= N; i++) {
+    int min0 = minDP[0];
+    int min1 = minDP[1];
+    int min2 = minDP[2];
+    minDP[0] = input[i][0] + Math.min(min0, min1);
+    minDP[1] = input[i][1] + Math.min(Math.min(min0, min1), min2);
+    minDP[2] = input[i][2] + Math.min(min1, min2);
+
+    int max0 = maxDP[0];
+    int max1 = maxDP[1];
+    int max2 = maxDP[2];
+    maxDP[0] = input[i][0] + Math.max(max0, max1);
+    maxDP[1] = input[i][1] + Math.max(Math.max(max0, max1), max2);
+    maxDP[2] = input[i][2] + Math.max(max1, max2);
+}
+```
+
+### 3회차
+
+- 코드
+
+    ```java
+    import java.io.*;
+    import java.util.*;
+    
+    public class Main {
+        public static void main(String[] args) throws Exception {
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    
+            // 1. input 입력받기
+            int N = Integer.parseInt(br.readLine());
+            int[][] input = new int[N + 1][3];
+    
+            for (int i = 1; i <= N; i++) {
+                StringTokenizer st = new StringTokenizer(br.readLine());
+                for (int j = 0; j < 3; j++) {
+                    input[i][j] = Integer.parseInt(st.nextToken());
+                }
+            }
+    
+            // 2. dp 배열 4개 생성
+            int[] minDP = new int[3];
+            int[] maxDP = new int[3];
+    
+            for (int i = 1; i <= N; i++) {
+                int min0 = minDP[0];
+                int min1 = minDP[1];
+                int min2 = minDP[2];
+                minDP[0] = input[i][0] + Math.min(min0, min1);
+                minDP[1] = input[i][1] + Math.min(Math.min(min0, min1), min2);
+                minDP[2] = input[i][2] + Math.min(min1, min2);
+    
+                int max0 = maxDP[0];
+                int max1 = maxDP[1];
+                int max2 = maxDP[2];
+                maxDP[0] = input[i][0] + Math.max(max0, max1);
+                maxDP[1] = input[i][1] + Math.max(Math.max(max0, max1), max2);
+                maxDP[2] = input[i][2] + Math.max(max1, max2);
+            }
+    
+            int min = Math.min(Math.min(minDP[0], minDP[1]), minDP[2]);
+            int max = Math.max(Math.max(maxDP[0], maxDP[1]), maxDP[2]);
+    
+            bw.write(max + " " + min);
+    
+            bw.flush();
+            bw.close();
+            br.close();
+        }
+    }
+    ```
+
+- 입력 배열도 변경해보기
+
+```java
+// 1. input 입력받기
+int N = Integer.parseInt(br.readLine());
+int[] input = new int[3];
+
+// 2. dp 배열 4개 생성
+int[] minDP = new int[3];
+int[] maxDP = new int[3];
+
+for (int i = 0; i < N; i++) {
+    StringTokenizer st = new StringTokenizer(br.readLine());
+    for (int j = 0; j < 3; j++) {
+        input[j] = Integer.parseInt(st.nextToken());
+    }
+    
+    int min0 = minDP[0];
+    int min1 = minDP[1];
+    int min2 = minDP[2];
+    minDP[0] = input[0] + Math.min(min0, min1);
+    minDP[1] = input[1] + Math.min(Math.min(min0, min1), min2);
+    minDP[2] = input[2] + Math.min(min1, min2);
+
+    int max0 = maxDP[0];
+    int max1 = maxDP[1];
+    int max2 = maxDP[2];
+    maxDP[0] = input[0] + Math.max(max0, max1);
+    maxDP[1] = input[1] + Math.max(Math.max(max0, max1), max2);
+    maxDP[2] = input[2] + Math.max(max1, max2);
+}
+```
+
+메모리 **52920 KB → 44032 KB** 개선 완료!
+
+---
