@@ -194,7 +194,7 @@ N: 줄의 개수 **1 ≤ N ≤ 100,000**
 
 - minDP / maxDP 와 같은 이름으로 dp 배열을 두 개 만들어서 각각에서 최솟값과 최댓값을 구하기!
 
-사진
+<img width="1304" height="744" alt="image" src="https://github.com/user-attachments/assets/f9ab43cf-a709-4b6e-ad4f-7b055f1cdd9b" />
 
 이런 식으로 배열의 열 위치에 맞게 최대/최소 점수를 구하는 DP 배열을 준비
 
