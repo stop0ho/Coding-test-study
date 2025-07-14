@@ -22,7 +22,7 @@ M: 가로 길이 **1 ≤ M ≤ 300**
 - 오른쪽으로 한 칸 또는 아래쪽으로 한 칸씩 이동하며 시작지점에서 종료지점에 도달해야 함
     - 특정 지점에서 오른쪽 또는 아래쪽으로 이동했을 때 자원의 개수가 최대가 되도록 이동하기
 
-그림 첨부 위치
+<img width="761" height="347" alt="image" src="https://github.com/user-attachments/assets/eb8f7996-0c56-4235-a3db-68f41063e248" />
 
 위 그림을 바탕으로 점화식은 아래와 같이 작성할 수 있다.
 
@@ -76,11 +76,11 @@ N: 전체 집의 수 **2 ≤ N ≤ 1,000**
 
 ⇒ dp 배열에 **각 선택의 결과에서 얻을 수 있는 최솟값을 저장**
 
-사진
+<img width="1059" height="376" alt="image" src="https://github.com/user-attachments/assets/9d3d6e1c-31e6-4c8f-9583-24da6b030057" />
 
 위 그림처럼 각 행별로 얻을 수 있는 최솟값을 구해서 dp 배열에 저장
 
-사진
+<img width="743" height="383" alt="image" src="https://github.com/user-attachments/assets/e5e435db-2645-40b9-bf97-87cba10df6ea" />
 
 최종적으로는 이렇게 만들어져서, **min(96, 172, 185) = 96**으로, **최솟값이 96**임을 알 수 있음
 
