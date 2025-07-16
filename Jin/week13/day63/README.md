@@ -1,10 +1,11 @@
 ## 📌 문제 탐색하기
 
-### 숫자 야구 문제
+### 문제
 
 숫자 야구 게임 중 가능성이 있는 답의 총 개수를 출력
 
-사진
+<img width="600" height="351" alt="image" src="https://github.com/user-attachments/assets/a6ab0776-2ddf-49c9-a8d2-5347aa373beb" />
+
 
 - **1에서 9까지의 서로 다른 숫자 세 개로 구성된 세 자리 수**
 - 세 자리의 수의 **동일한 자리에 위치하면 스트라이크**
