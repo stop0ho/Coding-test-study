@@ -1,4 +1,4 @@
-package Jin.week13;
+package Jin.week13.day61;
 
 import java.io.*;
 import java.util.*;
