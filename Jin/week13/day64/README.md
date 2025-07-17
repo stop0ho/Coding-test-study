@@ -20,7 +20,8 @@
 
 - 끝까지 승리조건을 만족하는 바둑알이 없다면 0을 출력
 
-![image.png](attachment:e81eaa84-610e-438a-ab43-86c5722fbbd1:image.png)
+<img width="735" height="381" alt="image" src="https://github.com/user-attachments/assets/b81b29ba-3ea0-4b6b-b78b-a5b6231ba745" />
+
 
 바둑판을 탐색한다고 했을 때, 검은색 화살표 방향으로 탐색하기 때문에, 가능한 승리 조건은 오른쪽의 빨간 화살표 모양.
 
