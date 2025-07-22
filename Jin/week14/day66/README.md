@@ -164,3 +164,148 @@ lower bound와 upper bound 개념
 
 
 ---
+
+## 📌 문제 탐색하기
+
+### 어두운 굴다리 문제
+
+굴다리를 모두 비추기 위한 가로등의 최소 높이 구하기
+
+- **가로등의 높이는 모두 같음**
+- 가로등의 높이 **H** → **왼쪽으로 H, 오른쪽으로 H만큼 비춤**
+
+### 조건
+
+N: 굴다리의 길이 **1 ≤ N ≤ 100,000**
+
+M: 가로등의 개수 **1 ≤ M ≤ N**
+
+x: 가로등의 위치 **0 ≤ x ≤ N**
+
+- 오름차순으로 입력
+- 가로등의 개수만큼 들어옴
+
+### 풀이 및 시간 복잡도 고려
+
+1. 가로등의 높이를 1부터 시작해서, 모든 칸을 다 덮을 때까지 반복하기
+
+→ N = 100,000 / M = 1일 때는 높이가 대충 50,000이어야지 가능함.. 50,000 * 100,000번 반복하니까.. **5 * 10^9 이므로 1초 내로 문제 풀이 불가능**
+
+1. 이분탐색
+
+   ![image.png](attachment:adbaf6ec-7307-4d5c-95ae-203a5a7712ae:image.png)
+
+    - **첫 번째 가로등**은 무조건 **0번 길을 밝혀야 함**
+    - **마지막 가로등**은 무조건 **N번 길을 밝혀야 함**
+        - 내가 이걸 배열처럼 그려서 틀렸던 것..! N - 1번이 아니라 N번을 밝혀줘야 함
+
+   → **두 조건 중 하나라도 만족하지 못하면 모든 길을 밝힐 수 없으므로, 높이를 올려야 함**
+
+    - 가로등과 가로등 사이는 **앞 쪽 가로등 + H ≥ 뒤 쪽 가로등 - H** 조건을 만족해야 함
+
+   → 최소한 같은 지점을 공유해야 그 사이는 전부 다 밝힐 수 있다는 것이니까. 넘어가도 상관은 없음!
+
+   그렇다면 높이 H를 어떻게 설정할 수 있을까?
+
+    - 여기서 **이분탐색**을 사용!
+        - 굴다리의 길이 절반만큼부터 시작해서, 부족하다면 높이를 늘리고 만족한다면 높이를 줄이면서 최적의 높이를 찾아가기
+
+      → **start = 0, end = N 으로 둔 후, H = (start + end) / 2로 시작**
+
+      이후에 H 값을 변경하면서 목표값을 찾으면 됨
+
+
+이분탐색의 시간복잡도 **O($log_2(N)$)**
+
+- 모든 가로등이 굴다리의 길이를 밝힐 수 있는지 확인하는 과정(가로등의 개수만큼 반복)이 필요
+
+→ **O(log_2(N) * M)**
+
+→ log_2(100,000) * 100,000 ≈ **1,700,000이므로 1초 내로 문제 풀이 가능**
+
+---
+
+## 📌 코드 설계하기
+
+1. input 입력 받기
+2. 이분탐색
+    - 높이가 H일 때 모든 길을 밝힐 수 있는지 확인
+        - **모든 길을 밝히지 못한다면 높이가 부족**한 것이므로 높이를 증가(start = H + 1)
+            - 이 과정에서 **최솟값을 계속 업데이트 해줘야 함**!! 현재 시점이 최솟값일 수 있으니까
+        - **모든 길을 밝힌다면 높이를 줄여 최솟값 탐색**(end = H - 1)
+3. 최솟값 반환
+
+---
+
+## 📌 시도 회차 수정 사항
+
+### 1회차
+
+- 코드
+
+    ```java
+    import java.io.*;
+    import java.util.*;
+    
+    public class Main {
+        public static void main(String[] args) throws Exception {
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    
+            // 1. 입력받기
+            int N = Integer.parseInt(br.readLine());
+            int M = Integer.parseInt(br.readLine());
+            
+            int[] pos = new int[M];
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            for (int i = 0; i < M; i++) {
+                pos[i] = Integer.parseInt(st.nextToken());
+            }
+            
+            // 2. 이분탐색
+            int start = 0, end = N;
+            int answer = 0;
+            while (start <= end) {
+                int H = (start + end) / 2;
+                
+                if (isPossibleHeight(pos, H, N)) {
+                    // 2-1. 모든 길을 밝힌다면 높이를 줄여 최솟값 탐색
+                    answer = H; // 현재값이 최솟값일 수 있으니 가능할 때마다 값 업데이트
+                    end = H - 1;
+                } else {
+                    // 2-2. 모든 길이 밝혀지지 않는다면 높이를 증가시켜 재탐색
+                    start = H + 1;
+                }
+            }
+            
+            bw.write(answer + "");
+            bw.flush();
+            bw.close();
+            br.close();
+        }
+        
+        private static boolean isPossibleHeight(int[] pos, int H, int N) {
+            // 0번 길을 밝힐 수 없으면 불가능한 높이
+            if (pos[0] - H > 0) return false;
+            
+            // N - 1번 길을 밝힐 수 없으면 불가능한 높이
+            if (pos[pos.length - 1] + H < N - 1) return false;
+            
+            for (int i = 0; i < pos.length - 2; i++) {
+                // 가로등 사이 모든 길이 밝혀지지 않으면 불가능한 높이
+                if (pos[i] + H < pos[i + 1] - H) return false;
+            }
+            
+            // 모든 길이 밝혀지면 true 반환
+            return true;
+        }
+    }
+    ```
+
+- 위의 그림을 배열처럼 그려서 발생한 문제
+    - 문제에서는 **N까지 번호를 매겨야지만 풀 수 있게 되어있다**!!! **범위를 잘 확인**할 것!
+
+  ⇒ **N - 1을 N으로 변경**해서 해결
+
+
+---
