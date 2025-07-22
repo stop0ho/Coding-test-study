@@ -23,7 +23,8 @@ M: 선분의 개수 **1 ≤ M ≤ 100,000**
   → 이분탐색 문제는 정렬된 상황에서 해야 함
 
 
-![image.png](attachment:e7c3b5c6-72e4-4357-8785-1dd29318dbeb:image.png)
+<img width="1009" height="180" alt="image" src="https://github.com/user-attachments/assets/e6f1b650-9013-4115-b894-7aecaa6256b1" />
+
 
 딱 이 그림처럼, 점의 좌표와 선분의 시작점과 끝점을 비교해 만족하는 좌표의 개수를 구하면 됨
 
@@ -46,7 +47,8 @@ M: 선분의 개수 **1 ≤ M ≤ 100,000**
 
 여기서 고민이 생겨서 이 문제를 풀기 위해 꼭 알아야 하는 개념이 있는지 Claude에 질문해보았다.
 
-![image.png](attachment:2f1facb0-988b-46fd-9855-98310917930e:image.png)
+<img width="685" height="78" alt="image" src="https://github.com/user-attachments/assets/80d190fd-f710-4f55-8bcc-70ef1be946f5" />
+
 
 lower bound와 upper bound 개념
 
@@ -193,7 +195,8 @@ x: 가로등의 위치 **0 ≤ x ≤ N**
 
 1. 이분탐색
 
-   ![image.png](attachment:adbaf6ec-7307-4d5c-95ae-203a5a7712ae:image.png)
+   <img width="835" height="266" alt="image" src="https://github.com/user-attachments/assets/509a9033-7d3a-4a08-a34e-53fc5485838c" />
+
 
     - **첫 번째 가로등**은 무조건 **0번 길을 밝혀야 함**
     - **마지막 가로등**은 무조건 **N번 길을 밝혀야 함**
